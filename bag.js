@@ -18,7 +18,7 @@ function draw(){
     text("bag", 45, 75);
     noFill();
     stroke("#FF0000");
-    rect(30, 60, 450, 350);
+    rect(30, 60, 600, 320);
 }
 
 function modelLoaded(){

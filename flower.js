@@ -18,7 +18,7 @@ function draw(){
     text("flower vase", 45, 75);
     noFill();
     stroke("#FF0000");
-    rect(30, 60, 450, 350);
+    rect(30, 60, 550, 550);
 }
 
 function modelLoaded(){

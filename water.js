@@ -18,7 +18,7 @@ function draw(){
     text("water bottle", 45, 75);
     noFill();
     stroke("#FF0000");
-    rect(30, 60, 450, 350);
+    rect(30, 60, 350, 350);
 }
 
 function modelLoaded(){
