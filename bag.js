@@ -1,5 +1,6 @@
 img = "";
 status = "";
+objects = [];
 
 function preload(){
     img = loadImage('bag.png');
@@ -14,11 +15,18 @@ function setup(){
 
 function draw(){
     image(img, 0, 0, 640, 420);
-    fill("#FF0000");
-    text("bag", 45, 75);
-    noFill();
-    stroke("#FF0000");
-    rect(30, 60, 600, 320);
+    
+    if(status != ""){
+        for(i = 0; i < objects.length; i++){
+            document.getElementById("status").innerHTML = "status: object detected";
+            fill("#FF0000");
+            percent = floor(objects[i].confidence * 100);
+            text(objects[i].label + " " + percent + "%", objects[i].x + 15, objects[i].y + 15);
+            noFill();
+            stroke("#FF0000");
+            rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+        }
+    }
 }
 
 function modelLoaded(){
@@ -32,4 +40,5 @@ function gotResult(error, results){
         console.log(error);
     }
     console.log(results);
+    objects = results;
 }
